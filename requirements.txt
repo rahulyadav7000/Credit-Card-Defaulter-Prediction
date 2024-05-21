@@ -8,5 +8,8 @@ flask
 
 mlflow==2.2.2
 dvc
+pymongo
+pymongo[srv]==3.8
 
--e .
+
+# -e .
