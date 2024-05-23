@@ -11,5 +11,6 @@ dvc
 pymongo
 pymongo[srv]==3.8
 
-
+catboost
+xgboost
 # -e .
