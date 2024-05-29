@@ -16,11 +16,11 @@
     }
 
     header {
-      background-color: #3498db;
+      background-color: #e48116;
       color: #fff;
       text-align: center;
       padding: 1em 0;
-      font-family: 'Pacifico', cursive;
+      font-family: 'Helvetica', monospace; 
     }
 
     .predict {
@@ -54,8 +54,8 @@
     }
 
     input[type="submit"] {
-      background-color: palevioletred;
-      color: #523030;
+      background-color: #3498db;
+      color: #fff;
       padding: 1em 2em;
       cursor: pointer;
       border: none;
@@ -78,17 +78,13 @@
         <h1>Credit Card Default Prediction</h1>
     </header>
     <div class="predict">
-        <form action="/" method="POST">
-
-
+        <form action="/predict" method="POST">
             {% if error_message %}
             <p style="color: red;">{{ error_message }}</p>
             {% endif %}
 
-
-
             <div class="form-group">
-                <label for="MARRIAGE">MARITAL STATUS</label>
+                <label for="MARRIAGE">Marital Status</label>
                 <select id="MARRIAGE" name="MARRIAGE">
                     <option value="1">Married</option>
                     <option value="2">Single</option>
@@ -106,7 +102,7 @@
             </div>
 
             <div class="form-group">
-                <label for="EDUCATION">EDUCATION</label>
+                <label for="EDUCATION">Education</label>
                 <select name="EDUCATION" id="EDUCATION">
                     <option value="1">Graduate School</option>
                     <option value="2">University</option>
@@ -118,213 +114,188 @@
                 </select>
             </div>
 
-            
-            <div class="pay-group">
-                <label for="PAY">Repayment Status:</label>
-
             <div class="form-group">
-                    <label for="PAY_6">April</label>
-                    <select name="PAY_6" id="PAY_6">
-                        <option value="-2">Zero credit</option>
-                        <option value="-1">Full Payment paid</option>
-                        <option value="0">Minimum payment paid</option>
-                        <option value="1">Payment delay for one month</option>
-                        <option value="2">Payment delay for two month</option>
-                        <option value="3">Payment delay for three month</option>
-                        <option value="4">Payment delay for four month</option>
-                        <option value="5">Payment delay for five month</option>
-                        <option value="6">Payment delay for six month</option>
-                        <option value="7">Payment delay for seven month</option>
-                        <option value="8">Payment delay for eight month</option>
-                        <option value="9">Payment delay for nine months and above</option>
-                    </select>
+                <label for="PAY_6">Repayment Status for April</label>
+                <select name="PAY_6" id="PAY_6">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
 
             <div class="form-group">
-              <label for="PAY_5">May</label>
-              <select name="PAY_5" id="PAY_5">
-                  <option value="-2">Zero credit</option>
-                  <option value="-1">Full Payment paid</option>
-                  <option value="0">Minimum payment paid</option>
-                  <option value="1">Payment delay for one month</option>
-                  <option value="2">Payment delay for two month</option>
-                  <option value="3">Payment delay for three month</option>
-                  <option value="4">Payment delay for four month</option>
-                  <option value="5">Payment delay for five month</option>
-                  <option value="6">Payment delay for six month</option>
-                  <option value="7">Payment delay for seven month</option>
-                  <option value="8">Payment delay for eight month</option>
-                  <option value="9">Payment delay for nine months and above</option>
-              </select>
+                <label for="PAY_5">Repayment Status for May</label>
+                <select name="PAY_5" id="PAY_5">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
 
             <div class="form-group">
-              <label for="PAY_4">June</label>
-              <select name="PAY_4" id="PAY_4">
-                <option value="-2">Zero credit</option>
-                <option value="-1">Full Payment paid</option>
-                <option value="0">Minimum payment paid</option>
-                <option value="1">Payment delay for one month</option>
-                <option value="2">Payment delay for two month</option>
-                <option value="3">Payment delay for three month</option>
-                <option value="4">Payment delay for four month</option>
-                <option value="5">Payment delay for five month</option>
-                <option value="6">Payment delay for six month</option>
-                <option value="7">Payment delay for seven month</option>
-                <option value="8">Payment delay for eight month</option>
-                <option value="9">Payment delay for nine months and above</option>
-              </select>
+                <label for="PAY_4">Repayment Status for June</label>
+                <select name="PAY_4" id="PAY_4">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
 
             <div class="form-group">
-              <label for="PAY_3">July</label>
-              <select name="PAY_3" id="PAY_3">
-                <option value="-2">Zero credit</option>
-                <option value="-1">Full Payment paid</option>
-                <option value="0">Minimum payment paid</option>
-                <option value="1">Payment delay for one month</option>
-                <option value="2">Payment delay for two month</option>
-                <option value="3">Payment delay for three month</option>
-                <option value="4">Payment delay for four month</option>
-                <option value="5">Payment delay for five month</option>
-                <option value="6">Payment delay for six month</option>
-                <option value="7">Payment delay for seven month</option>
-                <option value="8">Payment delay for eight month</option>
-                <option value="9">Payment delay for nine months and above</option>
-              </select>
+                <label for="PAY_3">Repayment Status for July</label>
+                <select name="PAY_3" id="PAY_3">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
 
             <div class="form-group">
-              <label for="PAY_2">August</label>
-              <select name="PAY_2" id="PAY_2">
-                <option value="-2">Zero credit</option>
-                <option value="-1">Full Payment paid</option>
-                <option value="0">Minimum payment paid</option>
-                <option value="1">Payment delay for one month</option>
-                <option value="2">Payment delay for two month</option>
-                <option value="3">Payment delay for three month</option>
-                <option value="4">Payment delay for four month</option>
-                <option value="5">Payment delay for five month</option>
-                <option value="6">Payment delay for six month</option>
-                <option value="7">Payment delay for seven month</option>
-                <option value="8">Payment delay for eight month</option>
-                <option value="9">Payment delay for nine months and above</option>
-              </select>
+                <label for="PAY_2">Repayment Status for August</label>
+                <select name="PAY_2" id="PAY_2">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
 
             <div class="form-group">
-              <label for="PAY_0">September</label>
-              <select name="PAY_0" id="PAY_0">
-                <option value="-2">Zero credit</option>
-                <option value="-1">Full Payment paid</option>
-                <option value="0">Minimum payment paid</option>
-                <option value="1">Payment delay for one month</option>
-                <option value="2">Payment delay for two month</option>
-                <option value="3">Payment delay for three month</option>
-                <option value="4">Payment delay for four month</option>
-                <option value="5">Payment delay for five month</option>
-                <option value="6">Payment delay for six month</option>
-                <option value="7">Payment delay for seven month</option>
-                <option value="8">Payment delay for eight month</option>
-                <option value="9">Payment delay for nine months and above</option>
-              </select>
+                <label for="PAY_0">Repayment Status for September</label>
+                <select name="PAY_0" id="PAY_0">
+                    <option value="-2">Zero credit</option>
+                    <option value="-1">Full Payment paid</option>
+                    <option value="0">Minimum payment paid</option>
+                    <option value="1">Payment delay for one month</option>
+                    <option value="2">Payment delay for two months</option>
+                    <option value="3">Payment delay for three months</option>
+                    <option value="4">Payment delay for four months</option>
+                    <option value="5">Payment delay for five months</option>
+                    <option value="6">Payment delay for six months</option>
+                    <option value="7">Payment delay for seven months</option>
+                    <option value="8">Payment delay for eight months</option>
+                    <option value="9">Payment delay for nine months and above</option>
+                </select>
             </div>
-
 
             <div class="form-group">
-                    <label for="LIMIT_BAL">Limit Balance: <span>(Amount of given credit in dollars includes individual and family/supplementary credit)</span></label>
-                    <input type="text" id="LIMIT_BAL" name="LIMIT_BAL" placeholder="Amount in dollars">
+                <label for="AGE">Age</label>
+                <input type="number" id="AGE" name="AGE" min="18" required>
             </div>
 
-                <div class="form-group">
-                    <label for="AGE">AGE</label>
-                    <input type="text" id="AGE" name="AGE" placeholder="in years"><br>
-                </div>
+            <div class="form-group">
+                <label for="LIMIT_BAL">Credit Limit (in dollars)</label>
+                <input type="number" id="LIMIT_BAL" name="LIMIT_BAL" required>
+            </div>
 
-                <div class="form-group">
-                    <label style="font-size: 18px; font-weight: bold;">Bill Amounts:</label>
-                    <span style="font-size: 14px; color: #666;">(Amount of bill statements in NT dollars)</span>
-                </div>
+            <div class="form-group">
+                <label for="BILL_AMT1">Bill Amount for September (in dollars)</label>
+                <input type="number" id="BILL_AMT1" name="BILL_AMT1" required>
+            </div>
 
+            <div class="form-group">
+                <label for="BILL_AMT2">Bill Amount for August (in dollars)</label>
+                <input type="number" id="BILL_AMT2" name="BILL_AMT2" required>
+            </div>
 
-                <div class="pay-subgroup">
+            <div class="form-group">
+                <label for="BILL_AMT3">Bill Amount for July (in dollars)</label>
+                <input type="number" id="BILL_AMT3" name="BILL_AMT3" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT6">April</label>
-                  <input type="text" id="BILL_AMT1" name="BILL_AMT6"><br>
-                  </div>
+            <div class="form-group">
+                <label for="BILL_AMT4">Bill Amount for June (in dollars)</label>
+                <input type="number" id="BILL_AMT4" name="BILL_AMT4" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT5">May</label>
-                  <input type="text" id="BILL_AMT5" name="BILL_AMT5"><br>
-                  </div>
+            <div class="form-group">
+                <label for="BILL_AMT5">Bill Amount for May (in dollars)</label>
+                <input type="number" id="BILL_AMT5" name="BILL_AMT5" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT4">June</label>
-                  <input type="text" id="BILL_AMT4" name="BILL_AMT4"><br>
-                  </div>
+            <div class="form-group">
+                <label for="BILL_AMT6">Bill Amount for April (in dollars)</label>
+                <input type="number" id="BILL_AMT6" name="BILL_AMT6" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT3">July</label>
-                  <input type="text" id="BILL_AMT3" name="BILL_AMT3"><br>
-                  </div>
+            <div class="form-group">
+                <label for="PAY_AMT1">Payment Amount for September (in dollars)</label>
+                <input type="number" id="PAY_AMT1" name="PAY_AMT1" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT2">August</label>
-                  <input type="text" id="BILL_AMT2" name="BILL_AMT2"><br>
-                  </div>
+            <div class="form-group">
+                <label for="PAY_AMT2">Payment Amount for August (in dollars)</label>
+                <input type="number" id="PAY_AMT2" name="PAY_AMT2" required>
+            </div>
 
-                  <div class="form-group">
-                  <label for="BILL_AMT1">September</label>
-                  <input type="text" id="BILL_AMT1" name="BILL_AMT1"><br>
-                  </div>
-                    
+            <div class="form-group">
+                <label for="PAY_AMT3">Payment Amount for July (in dollars)</label>
+                <input type="number" id="PAY_AMT3" name="PAY_AMT3" required>
+            </div>
 
+            <div class="form-group">
+                <label for="PAY_AMT4">Payment Amount for June (in dollars)</label>
+                <input type="number" id="PAY_AMT4" name="PAY_AMT4" required>
+            </div>
 
-                <div class="form-group">
-                    <label style="font-size: 18px; font-weight: bold;">Previous Payments:</label>
-                    <span style="font-size: 14px; color: #666;">(Amount of previous payments(in NT Dollar))</span>
-                </div>
-              </div>
+            <div class="form-group">
+                <label for="PAY_AMT5">Payment Amount for May (in dollars)</label>
+                <input type="number" id="PAY_AMT5" name="PAY_AMT5" required>
+            </div>
 
-              <div class="pay-subgroup">
+            <div class="form-group">
+                <label for="PAY_AMT6">Payment Amount for April (in dollars)</label>
+                <input type="number" id="PAY_AMT6" name="PAY_AMT6" required>
+            </div>
 
-                <div class="form-group">
-                <label for="PAY_AMT6">April</label>
-                <input type="text" id="PAY_AMT6" name="PAY_AMT6"><br>
-                </div>
-        
-                <div class="form-group">
-                <label for="PAY_AMT5">May</label>
-                <input type="text" id="PAY_AMT5" name="PAY_AMT5"><br>
-                </div>
-        
-                <div class="form-group">
-                <label for="PAY_AMT4">June</label>
-                <input type="text" id="PAY_AMT4" name="PAY_AMT4"><br>
-                </div>
-        
-                <div class="form-group">
-                <label for="PAY_AMT3">July</label>
-                <input type="text" id="PAY_AMT3" name="PAY_AMT3"><br>
-                </div>
-        
-                <div class="form-group">
-                <label for="PAY_AMT2">August</label>
-                <input type="text" id="PAY_AMT2" name="PAY_AMT2"><br>
-                </div>
-        
-                <div class="form-group">
-                <label for="PAY_AMT1">September</label>
-                <input type="text" id="PAY_AMT1" name="PAY_AMT1"><br>
-                </div>
-              </div>
-
-
-                <button type="submit" style="display: block; margin: auto;">Submit</button>
+            <div class="form-group">
+                <input type="submit" value="Predict">
+            </div>
         </form>
     </div>
 </body>
 </html>
-
-
