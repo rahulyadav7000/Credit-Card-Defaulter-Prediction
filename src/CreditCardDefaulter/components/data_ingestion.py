@@ -11,7 +11,7 @@ from pathlib import Path
 from src.CreditCardDefaulter.components.data_transformation import DataTransformationConfig
 from src.CreditCardDefaulter.components.data_transformation import DataTransformation
 
-#from src.CreditCardDefaulter.components.model_trainer import ModelTrainerConfig
+from src.CreditCardDefaulter.components.model_trainer import ModelTrainingConfig
 from src.CreditCardDefaulter.components.model_trainer import ModelTrainer
 
 
