@@ -17,3 +17,7 @@ train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_
 
 model_trainer = ModelTrainer()
 best_model, best_model_score = model_trainer.initiate_model_training(train_arr, test_arr)
+
+
+model_eval_obj = ModelEvaluation()
+model_eval_obj.initiate_model_evaluation(train_arr,test_arr)
