@@ -41,7 +41,7 @@ class ModelTrainer:
                 KNeighborsClassifier(n_neighbors=20): 'Knn classifier',
                 DecisionTreeClassifier(min_samples_split=15, min_samples_leaf=2, max_features='sqrt', max_depth=8,
                                        criterion='entropy'): 'Decision Tree',
-                RandomForestClassifier(n_estimators=200, max_depth=10, min_samples_split=4, min_samples_leaf=5,
+                RandomForestClassifier(n_estimators=200, max_depth=10, min_samples_split=4, min_samples_leaf=10,
                                        max_features='sqrt'): 'Random Forest',
                 GaussianNB(): 'Naiye Bayes',
                 AdaBoostClassifier(algorithm="SAMME"): 'AdaBoosting',

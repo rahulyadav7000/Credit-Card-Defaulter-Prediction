@@ -8,6 +8,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, roc_auc_score
 from urllib.parse import urlparse
 from dataclasses import dataclass
+import dagshub
 
 from src.CreditCardDefaulter.logger import logging
 from src.CreditCardDefaulter.exception import CustomException
@@ -36,6 +37,9 @@ class ModelEvaluation:
             mlflow.set_registry_uri("https://dagshub.com/rahulyadav7000/Credit-Card-Defaulter-Prediction.mlflow")
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme        
             print(tracking_url_type_store)
+            
+            dagshub.init(repo_owner='rahulyadav7000', repo_name='Credit-Card-Defaulter-Prediction', mlflow=True)
+
 
             with mlflow.start_run():
                 mlflow.set_tag("Best Model", str(model).split("(")[0])
