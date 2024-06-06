@@ -29,7 +29,6 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        
         ECR_REPOSITORY: creditcarddefaulter
         IMAGE_TAG: latest
       run: |
