@@ -38,7 +38,7 @@ class DataIngestion:
             logging.info("I performed train, test, split")
 
             
-            train_set, test_set = train_test_split(df,test_size = 0.2, random_state=30)
+            train_set, test_set = train_test_split(df,test_size = 0.20, random_state=30)
             logging.info("Train,Test,Split completed")
 
 
